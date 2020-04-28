@@ -62,7 +62,7 @@ class TarotSpread {
                                     <button id="homebtn${btnNum}" class="homebtn ui-btn ui-shadow ui-corner-all">HOME</button>     
                                 </a>
                                 <button id="savebtn${btnNum}" class="savebtn ui-btn ui-shadow ui-corner-all">SAVE SPREAD</button> 
-                                <button id="reset${btnNum}" style='position:absolute; top:0; right:0; padding:2em; width: 20%; height:10%;' class="ui-shadow ui-corner-all ui-btn-icon-left" src='img/reset.png'></button>
+                                <img id="reset${btnNum}" style='position:absolute; top:0; right:0; padding:2em; width: 20%; height:10%;' class="ui-shadow ui-corner-all ui-btn-icon-left" src='./img/reset.png'></button>
                             </div>`);
         
         //make grid appropriate grid for our spread
