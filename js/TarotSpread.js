@@ -133,7 +133,7 @@ class TarotSpread {
                     //     </div>
                     // <button data-icon="arrow-r" class="ui-button ui-widget ui-corner-all" style="position:absolute; width:10vh; height:10vh; top:0; right:0;"><button></button>
                     var element = $(`<div class="popup" data-role="popup" data-position-to="window" id="${pictureNameArray[randomSelect]}">   
-                                        <img class="popupimage ${reversed}" src="/img/${pictureNameArray[randomSelect]}.jpg">
+                                        <img class="popupimage ${reversed}" src="img/${pictureNameArray[randomSelect]}.jpg">
                                         <a href="#" data-rel="back" data-role="button" class="ui-btn-right ui-corner-all">
                                             <button class="exitButton ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-delete"></button>     
                                         </a>
@@ -141,11 +141,11 @@ class TarotSpread {
                     var popupOpener = $(`<div class="DeckCard border-radius-3" style="z-index:${countdownIndex};">
                                             <div style="position:absolute; width:100%; height:100%;" class="${reversed}">
                                                 <a href="#${pictureNameArray[randomSelect]}" data-rel="popup" data-position-to="window" data-transition="fade">
-                                                    <img class="hundredper-width-height CardFront popphoto rotate180" src="/img/${pictureNameArray[randomSelect]}.jpg">
+                                                    <img class="hundredper-width-height CardFront popphoto rotate180" src="img/${pictureNameArray[randomSelect]}.jpg">
                                                 </a>
                                             </div>
                                             
-                                            <img class="hundredper-width-height CardBack" src="/img/CardBack.png" style="z-index:${countdownIndex}">
+                                            <img class="hundredper-width-height CardBack" src="img/CardBack.png" style="z-index:${countdownIndex}">
                                         </div>`);
                     
 
