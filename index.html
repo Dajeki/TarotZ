@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" script-src='unsafe-inline';>
+    <title>Tarot Reading</title>
+
+    
+    <!-- Jquery main scripts
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" /> -->
+    <!-- <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <!--My Code here-->
+    <script src="js/main.js"></script>
+    <script src="/js/CardInfoDB.js"></script>
+    <script src="/js/TarotSpread.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/main.css"/>
+
+    <script>
+
+        //make sure we always start at the menu :D
+        $(window).on('load', function(){
+            // your logic here`enter code here`
+            if (window.location.href.includes('#')){      
+                let menuUrl ;
+                window.location.href = window.location.href.replace(/([#])\w+/, "");
+            }
+        });
+
+        $(window).on('load',function(e) {        
+            
+            var planet = new TarotSpread('planet');
+
+            console.log()
+            //have to wait for jquery to finish adding the cards to finish before setting this off.
+            setTimeout(()=>{
+                CardDBInit(planet.dataobject.arrayData);
+                PrevSaveDBInit();
+            },4000);
+
+            var star = new TarotSpread('star');
+            var paprfu = new TarotSpread('paprfu');
+         
+            $('#planetMenubtn').click((event)=>{
+                CreateScreen(planet);
+                star.currentCardSelect[0] = 1;
+                paprfu.currentCardSelect[0] = 1;
+                setTimeout(function() {
+                    planet.setupCardClickHandler();
+                    $('#reset1').click((event)=>{
+                        planet.currentCardSelect[0] = 1;
+                        planet.resetBoard();      
+                    });
+                },2000);
+                
+            });
+            $('#starMenubtn').click((event)=>{
+                CreateScreen(star);
+                planet.currentCardSelect[0] = 1;
+                paprfu.currentCardSelect[0] = 1;
+                setTimeout(function() {
+                    star.setupCardClickHandler();
+                    $('#reset2').click((event)=>{
+                        star.currentCardSelect[0] = 1;   
+                        star.resetBoard();      
+                    });
+                },2000);
+            });
+            $('#paprfuMenubtn').click((event)=>{
+                CreateScreen(paprfu);
+                planet.currentCardSelect[0] = 1;
+                star.currentCardSelect[0] = 1;
+                setTimeout(function() {
+                    paprfu.setupCardClickHandler();
+                    $('#reset3').click((event)=>{
+                        paprfu.currentCardSelect[0] = 1;
+                        paprfu.resetBoard();      
+                    });
+                },2000);
+            });
+
+            $('body').show(); 
+                             
+        });
+        
+    </script>
+</head>
+<body style="display: none;">
+
+    <div id="Menu" data-role="page" class='hundredper-width-height'>
+        <div id="startMenu" data-role="main" class="ui-content hundredper-width-height">
+
+            <div class='pad-and-marg'>
+                Planet </br>
+                1. Self </br>
+                2. Moon (home) </br>
+                3. Mercury (business, skills and integrity) </br>
+                4. Venus (love)
+                5. Mars (hostility, opposition and aggression) </br>
+                6. Jupiter (finance, acquisition and wealth) </br>
+                7. Saturn (intellect) </br>
+                8. Question outcome </br>
+                <em>Past Present Future</em></br>
+                1. Relevance to your past. Look back on these. </br>
+                2. Lessons from your present. </br>
+                3. Cultivation of work or lack there of will leads to this moment. </br>
+                Star </br>
+                1. Present situation </br>
+                2. Causes of conflicts and obstacles </br>
+                3. Changes needed in order to face challenges </br>
+                4. Strengths </br>
+                5. Other challenges </br>
+                6. Final outcome </br>
+                </br>
+                
+            </div>
+            <a href="#Page1">
+                <button id='planetMenubtn' class="selectbtn1 ui-btn ui-shadow ui-corner-all">Planet</button>
+            </a>
+            <a href="#Page2">
+                <button id='starMenubtn' class="selectbtn2 ui-btn ui-shadow ui-corner-all">Star</button>
+            </a>
+            <a href="#Page3">
+                <button id='paprfuMenubtn' class="selectbtn3 ui-btn ui-shadow ui-corner-all">Past Present Future</button>
+            </a>
+        </div> 
+    </div> 
+
+
+
+    <div id="Page1" data-role="page" data-theme="none" class='hundredper-width-height'>
+        
+    </div>
+    
+    <div id="Page2" data-role="page" data-theme="none" class='hundredper-width-height'>
+        
+    </div>
+
+    <div id="Page3" data-role="page" data-theme="none" class='hundredper-width-height'>
+        
+        </div>  -->
+    </div>
+
+    
+    
+</body>
+</html>

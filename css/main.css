@@ -1,0 +1,317 @@
+:root {
+    --row-full: 20%;
+    --column-full: 25%;
+    --row-half: calc(var(--row-full)/2);
+    --column-half: calc(var(--column-full)/2);
+    --background: url(../img/wallpaper.jpg);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%; 
+}
+
+body{
+    background-image: var(--background);
+    background-size: cover;
+}
+
+.ui-page {
+    height: 100vh;
+}
+
+.border-radius-3 {
+    border-radius: 3px;
+}
+
+.Card1 {
+    grid-area: Card1;
+    background-color: rgba(0, 0, 0, 0.677);
+}
+.Card2 {
+    grid-area: Card2;
+    background-color: rgba(255, 255, 255, 0.677);
+}
+.Card3 {
+    grid-area: Card3;
+    background-color: rgba(255, 255, 255, 0.677);
+}
+.Card4 {
+    grid-area: Card4;
+    background-color: rgba(0, 0, 0, 0.677);
+}
+.Card5 {
+    grid-area: Card5;
+    background-color: rgba(0, 0, 0, 0.677);
+}
+.Card6 {
+    grid-area: Card6;
+    background-color: rgba(255, 255, 255, 0.677);
+}
+.Card7 {
+    grid-area: Card7;
+    background-color: rgba(255, 255, 255, 0.677);
+}
+.Card8 {
+    grid-area: Card8;
+    background-color: rgba(0, 0, 0, 0.677);
+}
+.Mat {
+    grid-area: Mat;
+    background-color: rgba(0, 0, 0, 0.677);
+}
+.MatEnd {
+    grid-area: MatEnd;
+    background-color: rgba(0, 0, 0, 0.677);
+}
+.Deck {
+    grid-area: Deck;
+}
+
+.DeckCard {
+    position: absolute;
+    grid-area: Deck;
+    width: var(--column-full);
+    height: var(--row-full);
+    
+}
+
+
+.planet-grid-container {
+    display: grid;
+    width:100%;
+    height: 100%;
+    grid-template-areas:
+        '. .         Card5 Card5 . .' /* whole height */
+        '.     Card4 Card4 Card6 Card6 .' /* half height */
+        'Card3 Card4 Card4 Card6 Card6 Card7' /* half height */  
+        'Card3 Card2 Card2 Card8 Card8 Card7' /* half height */
+        '.     Card2 Card2 Card8 Card8 .' /* half height */
+        '. .         Card1 Card1 . .' /* whole height */ 
+        'Mat Mat Mat Mat Deck MatEnd';
+    grid-template-rows: var(--row-full) var(--row-half) var(--row-half) var(--row-half) var(--row-half) var(--row-full) var(--row-full);
+    grid-template-columns:var(--column-full) var(--column-half) var(--column-half) var(--column-half) var(--column-half) var(--column-full);
+}
+
+.star-grid-container {
+    display: grid;
+    width:100%;
+    height: 100%;
+    grid-template-areas:
+        '. . Card1 . . ' /* whole height */
+        '. Card2 . Card3 . '
+        '. . Card6 . . '
+        '. Card4 . Card5 . '
+        'Mat Mat Mat Deck MatEnd';
+    grid-template-rows:var(--row-full) var(--row-full) var(--row-full) var(--row-full) var(--row-full) ;
+    grid-template-columns: 1fr var(--column-full) var(--column-full) var(--column-full) 1fr; 
+}
+
+.paprfu-grid-container {
+    display: grid;
+    width:100%;
+    height: 100%;
+    grid-template-areas: 
+        '. . . . .' /* whole height */
+        '. . Card2 . . '
+        '. Card1 . Card3 .'
+        '. . . . .'
+        'Mat Mat Mat Deck MatEnd';
+    grid-template-rows: var(--row-full) var(--row-full) var(--row-full) var(--row-full) var(--row-full) ;
+    grid-template-columns: 1fr var(--column-full) var(--column-full) var(--column-full) 1fr; 
+}
+
+.hundredper-width-height {
+    width: 100%;
+    height: 100%;
+}
+
+.pad-and-marg {
+    margin: 1em;
+}
+
+#Deck {
+    height: 100%;
+    width:100%;
+}
+
+#grid-container {
+    /* background-image: var(--background); */
+    background-size: cover;
+}
+
+
+
+.planetPlaceCard1 { 
+    transform: translate(-100%, -100%);     
+}
+.planetPlaceCard2 {
+    transform: translate(-150%, -200%);
+}
+.planetPlaceCard3 {
+    transform: translate(-250%, -250%);    
+}
+.planetPlaceCard4 {
+    transform: translate(-150%, -300%);     
+}
+.planetPlaceCard5 {
+    transform: translate(-100%, -400%);     
+}
+.planetPlaceCard6 {
+    transform: translate(-50%, -300%);     
+}
+.planetPlaceCard7 {
+    transform: translate(50%, -250%);  
+}
+.planetPlaceCard8 {
+    transform: translate(-50%, -200%);   
+}
+
+.starPlaceCard1 {
+    transform: translate(-100%, -400%);
+}
+.starPlaceCard2 {
+    transform: translate(-200%, -300%);
+}
+.starPlaceCard3 {
+    transform: translate(0%, -300%);
+}
+.starPlaceCard4 {
+    transform: translate(-200%, -100%);
+}
+.starPlaceCard5 {
+    transform: translate(0%, -100%);
+}
+.starPlaceCard6 {
+    transform: translate(-100%, -200%);
+}
+
+.paprfuPlaceCard1 {
+    transform: translate(-200%, -200%);
+}
+.paprfuPlaceCard2 {
+    transform: translate(-100%, -300%);
+}
+.paprfuPlaceCard3 {
+    transform: translate(0%, -200%);
+}
+
+.rotate180 {
+    transform: rotateY(-180deg);
+    backface-visibility: hidden; 
+}
+
+.fadeOut {
+    opacity: 0%;
+}
+
+.CardBack, .CardFront {
+    background:rgb(226,211,170);
+    border-radius: 1px;
+    position: absolute;
+    border-radius: 3px;
+}
+
+.animateTransform {
+    transition: transform 2s ease-in-out;
+}
+
+.ui-content {
+    padding: 0;
+}
+.ui-mobile {
+    height: 100%;
+}
+
+.ui-btn {
+    padding: 0px;
+    margin: 0px;
+    border: 3px;
+    box-shadow: inset 4px 4px 4px 4px rgba(0, 0, 0, 0.349);
+}
+
+
+.ui-icon-delete, .exitButton {
+    -ms-transform: scale(2); /* IE 9 */
+    -webkit-transform: scale(2); /* Chrome, Safari, Opera */
+    transform: scale(3);
+    padding:1.2em
+}
+
+/* .ui-icon-arrow-l, .homebtn {
+    -ms-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(3);
+    padding:1.2em;
+} */
+#savebtn1, #savebtn2, #savebtn3 {
+    display: block;
+    width:90%;
+    height: 50%;
+}
+
+.selectbtn3 {
+    bottom: 0%;
+}
+
+.selectbtn2 {
+    bottom: 10%;
+}
+
+.selectbtn1 {
+    bottom: 20%;
+}
+
+.selectbtn1, .selectbtn2, .selectbtn3 {
+    display: block;
+    position: absolute;
+    width: 90%;
+    height: 10%;
+}
+
+a[href='#Menu'] {
+    height:50%;
+} 
+
+#homebtn1, #homebtn2, #homebtn3  {
+    display: block;
+    width: 90%;
+    height: 100%;
+}
+
+#HomeButton a {
+
+    display: block;
+    height: 50%;
+}
+
+.popup {
+    width: 65vw;
+    height: 70vh;
+}
+
+.popupimage {
+    width: 100%;
+    height: 100%;
+}
+
+.reversedCard {
+    transform: rotateZ(180deg);
+}
+
+
+#video1, #video2, #video3 {
+    height:100vh;
+    z-index: -1;
+}
+
+
+
+
+
